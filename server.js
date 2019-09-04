@@ -18,8 +18,6 @@ var requestHandler = function(request, response) {
     response.statusCode = 404;
     response.end('Bad gateway error');
   }
-  
-  console.log('New connection');
   /*
     Your request handler should send listingData in the JSON format as a response if a GET request 
     is sent to the '/listings' path. Otherwise, it should send a 404 error. 
@@ -48,7 +46,7 @@ fs.readFile('listings.json', 'utf8', function(err, data) {
 
     HINT: Read up on JSON parsing Node.js
    */
-  
+
     //Check for errors
   
    //Save the sate in the listingData variable already defined
@@ -57,5 +55,5 @@ fs.readFile('listings.json', 'utf8', function(err, data) {
   var server = http.createServer(requestHandler);
   //Start the server
   server.listen(port, 'localhost');
-  console.log('Server started')
+  console.log('server listening on: http://localhost:8080')
 });
